@@ -1,0 +1,13 @@
+- name: Setup monitoring services
+  hosts: app
+  become: true
+  tasks:
+    - name: Create monitoring directory
+      file:
+        path: /opt/monitoring
+        state: directory
+        mode: "0755"
+
+    - name: Monitoring note
+      debug:
+        msg: "Deploy Prometheus and Grafana here using Docker Compose or your preferred monitoring stack."
